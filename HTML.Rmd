@@ -25,6 +25,21 @@ pais_andes <- as.factor(c("Bolivia", "Colombia", "Ecuador", "Peru"))
 # cada columna debe tener diferentes tipos de datos (entero, decimal, 
 # caracter, logico)
 
+Años_de_vida= data.frame(personas = paste0("Peop", 1:12),
+                            Años = sample(080, 12,
+                                                  replace = TRUE))
+Años_de_vida
+
+Años_de_vida$Criterio = ""
+
+Años_de_vida["Ascendencia"] = sample(c("Europea", "Asiatica","Occidental"), 
+                                        12, replace=TRUE)
+Años_de_vida["Ident_sex"] = sample(c("Hetero", "Bisex", "Homosex", "Pansex", "Null"), 
+                                        12, replace=TRUE)
+Años_de_vida["Year_ded"] = sample(c("2000", "2001", "2002", "2003", "2004", "2005"), 
+                                        12, replace=TRUE)
+
+
 
 # Cargue el dataset "DNase" e identifique su estructura. Extraiga (subset) 
 # los datos que cumplan con las condiciones de: 
