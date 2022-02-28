@@ -8,9 +8,8 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
+install
 ```{r}
-library(ggplot2); library(dplyr); library(forecast)
 # Crear un identificador de nombre "ciudad" y asigne 
 # como valor el nombre de alguna ciudad
 
@@ -26,7 +25,7 @@ pais_andes <- as.factor(c("Bolivia", "Colombia", "Ecuador", "Peru"))
 # caracter, logico)
 
 Años_de_vida= data.frame(personas = paste0("Peop", 1:12),
-                            Años = sample(080, 12,
+                            Años = sample(0:80, 12,
                                                   replace = TRUE))
 Años_de_vida
 
@@ -40,7 +39,7 @@ Años_de_vida["Year_ded"] = sample(c("2000", "2001", "2002", "2003", "2004", "20
                                         12, replace=TRUE)
 
 
-
+Años_de_vida
 # Cargue el dataset "DNase" e identifique su estructura. Extraiga (subset) 
 # los datos que cumplan con las condiciones de: 
 #   1. "conc" (concentracion) entre 0.1 y 0.2
@@ -50,12 +49,10 @@ Años_de_vida["Year_ded"] = sample(c("2000", "2001", "2002", "2003", "2004", "20
 colnames(DNase)
 head(DNase, 3)
 str(DNase) # Estructura del dataset
-DNase <- DNase[DNase$select == "2",]
-
-
+DNase <- DNase[DNase$select == "3",]
 
 concen = subset(DNase, Run != 2 & conc > 0.2 & density <= 1.0)
-print(concentracion2)
+print(concen)
 
 
 ```
